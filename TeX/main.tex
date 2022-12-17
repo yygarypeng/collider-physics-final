@@ -14,23 +14,29 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{float}
+\usepackage{fontspec}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{multicol}
-\usepackage{newtxtext, newtxmath}
 \usepackage{physics} 
 \usepackage{sectsty}
 \usepackage{subfigure}
+\usepackage{unicode-math}
+\usepackage{url}
 \usepackage{tabularx}
 \usepackage{wallpaper}
+\usepackage{xeCJK}
 
-% \CenterWallPaper{.2}{nthu-logo.jpg}
+\setmainfont{Times New Roman}
+\setCJKmainfont{教育部標準宋體UN}
+\setmonofont{Courier New}
+\setmathfont{XITS Math}
 
 \renewcommand\thesection{\Roman{section}.}
-\renewcommand\thesubsection{\normalsize \roman{subsection}.}
-\sectionfont{\large \centering}
-\subsectionfont{\centering \normalsize \emph}
+\renewcommand\thesubsection{\normalsize\roman{subsection}.}
+\sectionfont{\centering\large}
+\subsectionfont{\centering\normalsize\it}
 
 \geometry{
     a4paper,
@@ -77,7 +83,7 @@
 \title{{\vspace{-2.0cm}
         \normalsize Collider Physics - Final Report}\\
         \textbf{Atmospheric Neutrino Oscillation in Super-K}}
-\author{Yuan-Yen Peng}
+\author{Yuan-Yen Peng（彭元彥）}
 \affil{\emph{Dept. of Physics, NTHU}\\
         \emph{Hsinchu, Taiwan}}
 \date{\today}
@@ -88,12 +94,64 @@
 \begin{multicols}{2}
     
 \section{Neutrino Oscillation}
-    We comprehend that the government is obligated to upgrade the whole prosperity level of society. Some stages, thereby, ought to be fulfilled; simultaneously, requiring some counterpoise with different hierarchies, inevitably. Some utilitarians may assert that it must quell the low class of people so as to haul up the entire echelon of humankind. We, however, cast doubt on this argument, reckoning that the wipe-out method is too arbitrary and transgressed as a viewpoint of humanity. Ergo, we want to use the numerical model to subvert utilitarianism's implementation.
+    Four types of neutrino sources are classified as solar neutrino, atmospheric neutrino, accelerator neutrino, and reactor neutrino. Besides, these neutrino sources are investigated in different experimental facilities. As the aforementioned, the first affiliated neutrino observatory is SNO (Sudbury Neutrino Observatory) in Canada; the second representative neutrino observatory is Super-K (Super Kamiokande) in Japan; the third corresponding observatories are KEK-SuperK (Japan), T2K(Japan), etc; the last observatories representing are KamLAND, Daya bay (China), etc. In this final report, we are going to present and elaborate on atmospheric neutrino oscillation in Super-K.
+
     \subsection{Neutrino Oscillation}
-    We comprehend that the government is obligated to upgrade the whole prosperity level of society. Some stages, thereby, ought to be fulfilled; simultaneously, requiring some counterpoise with different hierarchies, inevitably. Some utilitarians may assert that it must quell the low class of people so as to haul up the entire echelon of humankind. We, however, cast doubt on this argument, reckoning that the wipe-out method is too arbitrary and transgressed as a viewpoint of humanity. Ergo, we want to use the numerical model to subvert utilitarianism's implementation.
+        Neutrino oscillation is a phenomenon that describes the flavor of neutrino oscillating among three different flavors. In general, the ``flavor eigenstates'' are related to the ``mass eigenstates'' of the'' with $3 \times 3$ unitary mixing matrix:
+        \[
+            | \nu_{\alpha} \rangle = \sum_{i} U_{\alpha i} | \nu_{i} \rangle
+        \]
+        The matrix $U$ is the PMNS matrix (Pontecorvo-Maki-Nakagawa-Sakata matrix: mixing flavor eigenstates of leptons); $\nu_\alpha$ is the mass eigenstate and $\nu_i$ is the flavor eigenstate. Thus, we need the PMNS matrix in order to find the relation between eigenspaces. The PMNS matrix is \cite{SKexp} \cite{wiki}:
+        \begin{align*}
+            U_{\alpha i} &= 
+            \begin{bmatrix}
+                U_{e1}     & U_{e2}     & U_{e3}    \\
+                U_{\mu 1}  & U_{\mu 2}  & U_{\mu 3} \\
+                U_{\tau 1} & U_{\tau 2} & U_{\tau 3}\\
+            \end{bmatrix}\\
+            &=
+            \begin{bmatrix}
+                1 & 0       & 0     \\
+                0 & c_{23}  & s_{23}\\
+                0 & -s_{23} & c_{23}\\
+            \end{bmatrix}
+            \begin{bmatrix}
+                c_{13}             & 0 & s_{13}e^{i\delta}\\
+                0                  & 1 & 0                \\
+                -s_{13}e^{i\delta} & 0 & c_{13}           \\
+            \end{bmatrix}\\
+            &\quad
+            \begin{bmatrix}
+                c_{12}  & s_{12} & 0\\
+                -s_{12} & c_{12} & 0\\
+                0       & 0      & 1\\
+            \end{bmatrix}
+        \end{align*}
+        where $\alpha = e,\ \mu,\ \tau$; $i = 1,\ 2,\ 3$; $c_{ab}$ and $s_{ab}$ means $sin$ and $cos$ with mixing angle $\theta_{ab}$; $\delta$ means CP-violating phase (s.t. second term of the matrix is small). The first term of the matrix is corresponding to ``solar mixing'', the second term of the matrix is known to be small, and the third term of the matrix describes ``atmospheric mixing''.
+
+        The experiment of testing the neutrino oscillation needs a distance $L$ to investigate. We, thence, need to consider the state propagating. For mass eigenstate 
+        \[
+            |\nu_{j}(t)\rangle = e^{-i(E_{j}t - \vec{p_{j}} \cdot \vec{x})} |\nu_{j}(0)\rangle
+        \]
+        take ultrarelativistic limit $|\vec{p_j}| \gg m_j$ and also drop out the relative phase. When $t\approx L$: \cite{wiki}
+        \[
+            |\nu_{j}(L)\rangle = e^{-i(\frac{m_{j}^{2}L}{2E})} |\nu_{j}(0)\rangle
+        \]
+
+        In the wake of knowing the propagation of the mass eigenstate, we want to know the ``interference'' between the flavor eigenstate. Therefore, suppose the initial lepton with the flavor eigenstate $\alpha$ and what is the probability if we observe $\beta$ when $t \approx L$ \cite{SKexp}
+        \begin{align*}
+            P_{\alpha \rightarrow \beta}&= |\langle\nu_{beta}|\nu_{\alpha}\rangle|^{2}\\
+                                        &= \Big| \sum_{j}U_{\alpha j}^{*}U_{\beta j}e^{-i(\frac{m_{j}^{2}L}{2E})} \Big|^2\\
+                                        & \quad drop\ out\ \mathbb{Im}\\
+                                        &\Rightarrow \delta_{\alpha \beta} - 4\sum_{j > i} \mathbb{Re} \Bigl\{ U_{\alpha i}^{*}U_  {\beta j}U_{\alpha k}U_{\beta k}^{*} \Bigr\}\\ 
+                                        &\quad \times \sin^{2} \Big( \frac{\Delta_{jk}m^2L}{4E} \Big)
+        \end{align*}
     
+    \subsection{One mass scale dominant approximation}
+
+
+
 \section{Super Kamiokonde}
-    me stable stages, and we will observe the population invisible hand” to interrupt the system; in other words, wipe out the low-class people, etc. Afterward, observe the analogical quantities, too.
 
 
 \section{Results}
@@ -117,12 +175,12 @@
 \section{Outlook}
 
 
-\begin{thebibliography}{3}
+\begin{thebibliography}{1}
 
 	%Each item starts with a \bibitem{} command and the details thereafter.
 	
-    % \bibitem{1} Quick facts \#3: Poisson noise, https://reurl.cc/XjR2v3
-    % \bibitem{2} Changing the contrast and brightness of an image! - Theory, https://reurl.cc/Lm5aWK
+    \bibitem{SKexp} J. Hosaka et al. Physical Review D (2006)
+    \bibitem{wiki} Wikipedia Contributors, Neutrino oscillation, Wikipedia (2022).
     % \bibitem{3} Gaussian Approach to Poisson Noise - Adding Poisson noise to an image, \emph{slack overflow}, answer from \emph{Vimieiro}, edited by \emph{BOT}.
     % \bibitem{4} Shot noise, Wikipedia, https://reurl.cc/ZAN4Xg
     % \bibitem{5} Shot Noise, \emph{sunny lee}, https://reurl.cc/NAb9Vn 
