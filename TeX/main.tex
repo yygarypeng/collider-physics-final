@@ -142,29 +142,34 @@
         \begin{align*}
             P_{\alpha \rightarrow \beta}&= |\langle\nu_{\beta}|\nu_{\alpha}\rangle|^{2}\\
                                         &= \Big| \sum_{j}U_{\alpha j}^{*}U_{\beta j}e^{-i(\frac{m_{j}^{2}L}{2E})} \Big|^2\\
-                                        & \quad drop\ out\ \mathbb{Im}\\
-                                        &\Rightarrow \delta_{\alpha \beta} - 4\sum_{j > i} \mathbb{Re} \Bigl\{ U_{\alpha i}^{*}U_  {\beta j}U_{\alpha k}U_{\beta k}^{*} \Bigr\}\\ 
-                                        &\quad \times \sin^{2} \Big( \frac{\Delta_{jk}m^2L}{4E} \Big)
-                                        \tag{1}\label{prob_raw}
+                                        &\qquad \text{drop out}\ \mathbb{Im}\\
+                                        &\Rightarrow    \begin{aligned}[t]
+                                                            \delta_{\alpha \beta}   &- 4\sum_{j > k} \mathbb{Re} \Bigl\{ U_{\alpha j}^{*}U_  {\beta j}U_{\alpha k}U_{\beta k}^{*} \Bigr\}\\ 
+                                                                                    &\mathrel \times \sin^{2} \Big( \frac{\Delta_{jk}m^2L}{4E} \Big)\\
+                                                        \end{aligned}
+            \tag{1}\label{prob_raw}
         \end{align*}
     
         \subsection{One mass scale dominant approximation}
         The one mass scale dominant approximation means there is one mass among the three masses which is manifest larger than the others in the mass square difference. (This approximation has been supported by the neutrino experiments \cite{SKexp}) Here, we suppose $m_3$ is the dominant mass :
         \[
-            |m_{2}^{2} - m_{1}^{2}| \ll |m_{3}^{2} - m_{1,\ 2}^{2}|
+            |m_{2}^{2} - m_{1}^{2}| \ll |m_{3}^{2} - m_{1,2}^{2}|
         \]
         Additionally, we can rewrite the phase inside the square of $\sin$ in equation (\ref{prob_raw}) as:
         \begin{align*}
             \frac{\Delta_{jk}(mc)_{2}L}{4 \hbar c} &= \frac{GeV\ fm}{4 \hbar c} \times \frac{\Delta_{jk} m^2}{eV^2} \frac{L}{km} \frac{GeV}{E}\\
             &\approx 1.27 \times \frac{\Delta_{jk} m^2}{eV^2} \frac{L}{km} \frac{GeV}{E}
         \end{align*}
-        According to this method, the propagating probabilities in vacuum for atmospheric neutrinos are: \cite{SKexp}
+        According to this method, the propagating probabilities in vacuum for atmospheric neutrinos are \cite{SKexp} : 
         \begin{align*}
-            P(\nu_{e} \rightarrow \nu_{\mu})    &= P(\nu_{\mu}\rightarrow \nu_{e})&\\
-                                                &= \sin^{2}\theta_{23} \sin^{2}\theta_{13} \Big( \frac{1.27 \Delta m^{2} L}{E} \Big)&\\
-            P(\nu_{e} \rightarrow \nu_{e})      &= 1 - \sin^{2}\theta_{13}\sin^{2} \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\ 
-            P(\nu_{\mu} \rightarrow \nu_{\mu})  &= 1 - 4 \cos^{2}\theta_{13}\sin^{2}\theta_{23}\\
-                                                &\times \big( 1 - \cos^{2}\theta_{13}\sin^{2} \theta_{23} \big) \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\
+                P(\nu_{e} \rightarrow \nu_{\mu})    &= P(\nu_{\mu}\rightarrow \nu_{e})\\
+                                                    &= \sin^{2}\theta_{23} \sin^{2}\theta_{13} \Big( \frac{1.27 \Delta m^{2} L}{E} \Big)\\
+                P(\nu_{e} \rightarrow \nu_{e})      &= 1 - \sin^{2}\theta_{13}\sin^{2} \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\ 
+                P(\nu_{\mu} \rightarrow \nu_{\mu})  &= \begin{aligned}[t]
+                                                            1 - &4 \cos^{2}\theta_{13}\sin^{2}\theta_{23}\\
+                                                                &\times \big( 1 - \cos^{2}\theta_{13}\sin^{2} \theta_{23} \big)\\
+                                                                &\times \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\
+                                                        \end{aligned}
         \end{align*}
 
 
