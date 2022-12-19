@@ -95,11 +95,11 @@
 \begin{multicols}{2}
 \thispagestyle{fancy}
     
-\section{Neutrino Oscillation}
-    Four types of neutrino sources are classified as solar neutrino, atmospheric neutrino, accelerator neutrino, and reactor neutrino. Besides, these neutrino sources are investigated in different experimental facilities. As the aforementioned, the first affiliated neutrino observatory is SNO (Sudbury Neutrino Observatory) in Canada; the second representative neutrino observatory is Super-K (Super Kamiokande) in Japan; the third corresponding observatories are KEK-SuperK (Japan), T2K(Japan), etc; the last observatories representing are KamLAND, Daya bay (China), etc. In this final report, we are going to present and elaborate on atmospheric neutrino oscillation in Super-K.
+\section{Neutrino}
+    Four types of neutrino sources can be classified as solar neutrino, atmospheric neutrino, accelerator neutrino, and reactor neutrino. Besides, these neutrino sources are investigated in different experimental facilities. As the aforementioned, the first affiliated neutrino observatory is SNO (Sudbury Neutrino Observatory) in Canada; the second representative neutrino observatory is Super-K (Super Kamiokande) in Japan; the third corresponding observatories are KEK-SuperK (Japan), T2K(Japan), etc; the last observatories representing are KamLAND, Daya bay (China), etc. In this final report, we are going to present and elaborate on atmospheric neutrino oscillation in Super-K.
 
     \subsection{Neutrino Oscillation}
-        Neutrino oscillation is a phenomenon that describes the flavor of neutrino oscillating among three different flavors. In general, the ``flavor eigenstates'' are related to the ``mass eigenstates'' of the'' with $3 \times 3$ unitary mixing matrix:
+        Neutrino oscillation is a phenomenon that describes the flavor of neutrino oscillating among three different flavors; further, this phenomenon can explain the existence of neutrino mass (i.e., $\Delta m$). In general, the ``flavor eigenstates'' are related to the ``mass eigenstates'' of the'' with $3 \times 3$ unitary mixing matrix:
         \[
             | \nu_{\alpha} \rangle = \sum_{i} U_{\alpha i} | \nu_{i} \rangle
         \]
@@ -137,11 +137,17 @@
             |\nu_{j}(t)\rangle = e^{-i(E_{j}t - \vec{p_{j}} \cdot \vec{x})} |\nu_{j}(0)\rangle
         \]
         take ultrarelativistic limit $|\vec{p_j}| \gg m_j$ and also drop out the relative phase. When $t\approx L$: \cite{wiki}
+        \begin{align*}
+            E_{j}           &= \sqrt{\mathbf{p_{j}}^{2} + m_{j}^{2}} = \mathbf{p_{j}}\sqrt{1 + \frac{m_{j}^{2}}{\mathbf{{p}_{j}^{2}}}}\\
+                            &\approx \mathbf{p_{j}} \big( 1 + \frac{m_{j}^{2}}{2 \mathbf{p_{j}^{2}}} \big) = \mathbf{p_{j}} + \frac{m_{j}^{2}}{2 \mathbf{p_{j}}}\\
+            \Delta E_{ij}   &= \Big( \mathbf{p_{i}} + \frac{m_{i}^{2}}{2 \mathbf{p_{i}}} \Big) - \Big( \mathbf{p_{j}} + \frac{m_{j}^{2}}{2 \mathbf{p_{j}}} \Big) = \frac{\Delta m_{ij}^{2}}{2E} 
+        \end{align*}
+        Considering the difference of the state and taking the above approximation (here, we use $ij$ to indicate the difference, but in the following equation (\ref{prob_raw}) we use $jk$ to avoid garbling with imaginary), we can get:
         \[
-            |\nu_{j}(L)\rangle = e^{-i(\frac{m_{j}^{2}L}{2E})} |\nu_{j}(0)\rangle
+            |\nu_{ij}(L)\rangle = e^{-i(\frac{\Delta m_{ij}^{2}L}{2E})} |\nu_{ij}(0)\rangle
         \]
 
-        In the wake of knowing the propagation of the mass eigenstate, we want to know the ``interference'' between the flavor eigenstate. Therefore, suppose the initial lepton with the flavor eigenstate $\alpha$ and what is the probability if we observe $\beta$ when $t \approx L$ \cite{SKexp}
+        In the wake of knowing the propagation of the mass eigenstate, we want to know the ``interference'' between the flavor eigenstates. Therefore, suppose the initial lepton with the flavor eigenstate $\alpha$ and what is the ``probability'' if we observe the flavor eigenstate $\beta$ when $t \approx L$ is \cite{SKexp}:
         \begin{align*}
             P_{\alpha \rightarrow \beta}&= |\langle\nu_{\beta}|\nu_{\alpha}\rangle|^{2}\\
                                         &= \Big| \sum_{j}U_{\alpha j}^{*}U_{\beta j}e^{-i(\frac{m_{j}^{2}L}{2E})} \Big|^2\\
@@ -177,10 +183,6 @@
 
 
 \section{Super Kamiokonde}
-
-
-\section{Results}
-    In reality, the source usage rate depends on distance, constructed a concentric structure, for example, Beijing (Figure), Chicago, etc. Here, our artificially built city will likewise develop around the center of sources; thus, we adopt the concentric zone model to discuss the hierarchy distribution.
     
     % \begin{figure}[H]
     %     \centering 
