@@ -6,6 +6,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{array}
 \usepackage{authblk}
+% \usepackage{background}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{cellspace}
@@ -38,13 +39,27 @@
 \sectionfont{\centering\large}
 \subsectionfont{\centering\normalsize\it}
 
-\setlength{\headheight}{24pt}
 \geometry{
     a4paper,
     total = {170mm, 257mm},
     left = 20mm,
     top = 20mm,
     }
+    
+% \backgroundsetup{
+%                 firstpage = false,   
+%                 angle   = 0,
+%                 opacity = 1,
+%                 scale   = 1,
+%                 placement = bottom,
+%                 contents={
+%                          \includegraphics[width=50mm]{../figure/nthu-logo.png}
+%                             },
+%                 position={140mm, 8mm},
+%                     }
+
+\setlength{\unitlength}{1mm}
+% \setlength{\headheight}{5mm}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -75,7 +90,10 @@
     \fancyhf{} % clear all header and footer fields
     \renewcommand{\headrulewidth}{0pt} %clear the header line 
     \fancyhead[R]{
-        \ifnum\value{page}>1 \includegraphics[width = .2\textwidth]{../figure/nthu-logo.png} 
+        \ifnum\value{page}>1 
+            \begin{picture}(170, 257)
+                \put(120,245){\hbox{\includegraphics[width=50mm]{../figure/nthu-logo.png}}}
+            \end{picture}
         \else \fi
         }
     \fancyfoot[C]{\thepage}
@@ -90,11 +108,10 @@
 \date{\today}
 \maketitle
 
-%
 \setlength{\columnsep}{0.03\textwidth}
 \begin{multicols}{2}
 \thispagestyle{fancy}
-    
+
 \section{Neutrino}
     Four types of neutrino sources can be classified as solar neutrino, atmospheric neutrino, accelerator neutrino, and reactor neutrino. Besides, these neutrino sources are investigated in different experimental facilities. As the aforementioned, the first affiliated neutrino observatory is SNO (Sudbury Neutrino Observatory) in Canada; the second representative neutrino observatory is Super-K (Super Kamiokande) in Japan; the third corresponding observatories are KEK-SuperK (Japan), T2K(Japan), etc; the last observatories representing are KamLAND, Daya bay (China), etc. In this final report, we are going to present and elaborate on atmospheric neutrino oscillation in Super-K.
 
@@ -180,7 +197,7 @@
                                                                 &\times \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\
                                                         \end{aligned}
         \end{align*}
-
+        
 
 \section{Super Kamiokonde}
     
@@ -212,7 +229,7 @@
     % \bibitem{4} Shot noise, Wikipedia, https://reurl.cc/ZAN4Xg
     % \bibitem{5} Shot Noise, \emph{sunny lee}, https://reurl.cc/NAb9Vn 
         
-    %%% The 1,2 etc. are used to cite in text. See up in the intro for an example
+    %%% The 1,2 etc. are used to cite in text. See the intro for an example
     %%% When you want to cite in your cite, type in \cite{} wherever you want
     
 \end{thebibliography}
