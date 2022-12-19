@@ -103,7 +103,7 @@
         \[
             | \nu_{\alpha} \rangle = \sum_{i} U_{\alpha i} | \nu_{i} \rangle
         \]
-        The matrix $U$ is the PMNS matrix (Pontecorvo-Maki-Nakagawa-Sakata matrix: mixing flavor eigenstates of leptons); $\nu_\alpha$ is the mass eigenstate and $\nu_i$ is the flavor eigenstate. Thus, we need the PMNS matrix in order to find the relation between eigenspaces. The PMNS matrix is \cite{SKexp} \cite{wiki}:
+        The matrix $U$ is the PMNS matrix (Pontecorvo-Maki-Nakagawa-Sakata matrix: mixing flavor eigenstates of leptons); $\nu_\alpha$ is the mass eigenstate and $\nu_i$ is the flavor eigenstate. Thus, we need the PMNS matrix in order to find the relation between eigenspaces. The PMNS matrix is \cite{SKexp} \cite{AtoNeu}:
         \begin{align*}
             U_{\alpha i} &= 
             \begin{bmatrix}
@@ -152,17 +152,17 @@
             P_{\alpha \rightarrow \beta}&= |\langle\nu_{\beta}|\nu_{\alpha}\rangle|^{2}\\
                                         &= \Big| \sum_{j}U_{\alpha j}^{*}U_{\beta j}e^{-i(\frac{m_{j}^{2}L}{2E})} \Big|^2\\
                                         &\qquad \text{drop out}\ \mathbb{Im}\\
-                                        &\Rightarrow    \begin{aligned}[t]
-                                                            \delta_{\alpha \beta}   &- 4\sum_{j > k} \mathbb{Re} \Bigl\{ U_{\alpha j}^{*}U_  {\beta j}U_{\alpha k}U_{\beta k}^{*} \Bigr\}\\ 
-                                                                                    &\mathrel \times \sin^{2} \Big( \frac{\Delta_{jk}m^2L}{4E} \Big)\\
-                                                        \end{aligned}
-            \tag{1}\label{prob_raw}
+                                        &\begin{aligned}[c]
+                                            \Rightarrow \delta_{\alpha \beta}   &- 4\sum_{j > k} \mathbb{Re} \Bigl\{ U_{\alpha j}^{*}U_  {\beta j}U_{\alpha k}U_{\beta k}^{*} \Bigr\}\\ 
+                                                                                &\mathrel \times \sin^{2} \Big( \frac{\Delta_{jk}m^2L}{4E} \Big)
+                                        \end{aligned}
+                                        \tag{I}\label{prob_raw}
         \end{align*}
     
         \subsection{One mass scale dominant approximation}
         The one mass scale dominant approximation means there is one mass among the three masses which is manifest larger than the others in the mass square difference. (This approximation has been supported by the neutrino experiments \cite{SKexp}) Here, we suppose $m_3$ is the dominant mass :
         \[
-            |m_{2}^{2} - m_{1}^{2}| \ll |m_{3}^{2} - m_{1,2}^{2}|
+            \big| m_{2}^{2} - m_{1}^{2} \big| \ll \big| m_{3}^{2} - m_{1,2}^{2} \big|
         \]
         Additionally, we can rewrite the phase inside the square of $\sin$ in equation (\ref{prob_raw}) as:
         \begin{align*}
@@ -207,8 +207,8 @@
 	%Each item starts with a \bibitem{} command and the details thereafter.
 	
     \bibitem{SKexp} J. Hosaka et al. Physical Review D (2006)
+    \bibitem{AtoNeu} Mclachlan Fukuei Thomas. Study of the Oscillation of Neutrinos and Anti-Neutrinos and of Non-Standard Neutrino Interactions with the Atmospheric Data in Super-Kamiokande, U Tokyo (2015).
     \bibitem{wiki} Wikipedia Contributors, Neutrino oscillation, Wikipedia (2022).
-    % \bibitem{3} Gaussian Approach to Poisson Noise - Adding Poisson noise to an image, \emph{slack overflow}, answer from \emph{Vimieiro}, edited by \emph{BOT}.
     % \bibitem{4} Shot noise, Wikipedia, https://reurl.cc/ZAN4Xg
     % \bibitem{5} Shot Noise, \emph{sunny lee}, https://reurl.cc/NAb9Vn 
         
