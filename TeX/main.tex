@@ -92,7 +92,7 @@
     \fancyhead[R]{
         \ifnum\value{page}>1 
             \begin{picture}(170, 257)
-                \put(120,245){\hbox{\includegraphics[width=50mm]{../figure/nthu-logo.png}}}
+                \put(120,247){\hbox{\includegraphics[width=50mm]{../figure/nthu-logo.png}}}
             \end{picture}
         \else \fi
         }
@@ -189,52 +189,87 @@
         According to this method, the propagating probabilities in vacuum for atmospheric neutrinos are \cite{SKexp} : 
         \begin{align*}
                 P(\nu_{e} \rightarrow \nu_{\mu})    &= P(\nu_{\mu}\rightarrow \nu_{e})\\
-                                                    &= \sin^{2}\theta_{23} \sin^{2}\theta_{13} \Big( \frac{1.27 \Delta m^{2} L}{E} \Big)\\
-                P(\nu_{e} \rightarrow \nu_{e})      &= 1 - \sin^{2}\theta_{13}\sin^{2} \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\ 
+                                                    &= \sin^{2}\theta_{23} \sin^{2} 2\theta_{13} \sin^{2}\Big( \frac{1.27 \Delta m^{2} L}{E} \Big) \tag{II}\label{prob} \\
+                P(\nu_{e} \rightarrow \nu_{e})      &= 1 - \sin^{2} 2\theta_{13}\sin^{2} \sin^{2}\Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\ 
                 P(\nu_{\mu} \rightarrow \nu_{\mu})  &= \begin{aligned}[t]
                                                             1 - &4 \cos^{2}\theta_{13}\sin^{2}\theta_{23}\\
                                                                 &\times \big( 1 - \cos^{2}\theta_{13}\sin^{2} \theta_{23} \big)\\
-                                                                &\times \Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\
+                                                                &\times \sin^{2}\Big( \frac{1.27\Delta m^{2} L}{E} \Big)\\
                                                         \end{aligned}
         \end{align*}
-        
+        Here, we consider that neutrinos propagate in constant matter Earth density \cite{SKexp}, so equation (\ref{prob}) will become:
+        \begin{align*}
+            P(\nu_{e} \rightarrow \nu_{\mu})    &= P(\nu_{\mu}\rightarrow \nu_{e})\\
+                                                &= \sin^{2} \theta_{23} \sin^{2} 2\theta_{13}^{M} \sin^{2}\Big( \frac{1.27 \Delta m^{2} L}{E} \Big)\\
+        \end{align*}
+        where, the effective mixing angle $\theta^{M}$ is defined as:
+        \[
+            \sin^{2}2\theta_{13}^{M} = \frac{\sin^{2}2\theta_{13}}{(\cos2\theta_{13} - A_{CC}/\Delta m^{2})^{2} + \sin^{2}2\theta_{13}}
+        \]
+        The matter potential term is $A_{CC} = 2\sqrt{2}G_{F}N_{e}p$, where $G_{F}$, $N_{e}$ and $p$ are Fermi constant, electron density, and neutrino momentum, respectively.
+
+    \subsection{Two states oscillation}
+        Considering the probabilities functions obtained in the aforementioned, we can take a limit of infinitesimal $\theta_{13}$, it will only allow neutrino oscillating between flavors of $\tau$ and $\mu$; i.e, two flavor states oscillation, also we can see the probabilities of different initial neutrino oscillating to others in Figure \ref{NeuOsci}. Hence, we can reduce the probability function as:
+        \[
+            P_{\alpha \rightarrow \beta} = \sin^{2} 2\theta \sin^{2} \Big( \frac{1.27 \Delta m^{2}L}{E} \Big)\ \Big[ \text{Natural Units} \Big]
+        \] 
+        \begin{figure}[H]
+            \centering 
+            \includegraphics[width = 0.45\textwidth]{../figure/e.png}  
+            \includegraphics[width = 0.45\textwidth]{../figure/mu.png}  
+            \includegraphics[width = 0.45\textwidth]{../figure/tau.png}  
+            \caption{These three figures represent the probabilities in two flavors oscillations from the atmosphere. The top is the initial electron neutrino oscillating to others from the atmospheric neutrino source. The black line is the electron neutrino, the blue line is the muon neutrino, and the red line is for the tau neutrino; likewise, the middle is the initial muon neutrino, and the bottom is the initial tau neutrino. In this scenario, we find that electron neutrinos almost do not partake in the flavors exchange. \cite{wiki}}
+            \label{NeuOsci}
+        \end{figure}
 
 \section{Super Kamiokonde}
-    
-    % \begin{figure}[H]
-    %     \centering 
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/0.png}
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/2.png} 
-    % \end{figure}
-    % \begin{figure}[H]
-    %     \centering 
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/4.png}  
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/6.png}
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/8.png}
-    %     \includegraphics[width = 0.45\textwidth]{./RK4/10.png} 
-    %     \caption{This the normal cloud with RK4, from $t=0$ to $t=10$ and $dt=0.01$.}
-    %     \label{RK4_cloud}
-    % \end{figure}
+    Super-Kamiokande is a 50 kton water Cherenkov detector instrumented with 11,146 photomultiplier tubes (PMTs) facing an inner 22.5 kton fiducial volume of ultrapure water located under Mount Ikeno near the city of Hida, Gifu Prefecture, Japan. \cite{SKinfo}
 
-\section{Outlook}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 0.45\textwidth]{../figure/dect.png}
+        \caption{Super Kamiokonde detector. \cite{dect}}
+        \label{dect}
+    \end{figure}
 
+    In this report, we will show the Super-K experiment result in 1998 \cite{SKinfo}. According to the outcomes, the data is consistent at $90\%$ confidence level with the oscillation between muon neutrinos and tau neutrinos with $\sin^{2} 2\theta > 0.82$ and $5 \times 10^{-4} < \Delta m^{2} < 6 \times 10^{-3}\ [eV^{2}]$; however, these do not meet the best prediction of the expectations (Figure \ref{result1}). Therefore, I find other literature with the amendment of the effect of $\theta_{13}$ (brief theoretical introduction is in sec. I-ii), due to the time limit and the article length, I am not going to 
+    expound on the detail mixing angle experiment data in this article. However, the data in 1998 \cite{SKinfo} and the new data in 2006 \cite{SKexp} are in Figure \ref{result1} and \ref{result2}. Lastly, owing to the discovery of neutrino oscillations which further shows that neutrinos have mass, in 2015, Takaaki Kajita, in Super-K awarded the Nobel prize.
+
+\end{multicols}
+
+\clearpage
+\vspace*{\fill}
+\begin{center}
+    \includegraphics[width = 1\textwidth]{../figure/result1.png}
+    \captionof{figure}{These are the figures that describe the zenith angle distribution of $\mu$-like or $e$-like events at sub-GeV(visible energy $E_{vis} < 1.33\ GeV$) and multi-GeV(visible energy $E_{vis} > 1.33\ GeV$), where the visible energy is the total energy assuming all Cherenkov light is from electromagnetic showers. The hatched region shows the Monte Carlo expectation for ``no oscillations normalized'' data with statistical errors. The bold line is the best-fit expectation for $\nu_{\mu} \leftrightarrow \nu_{\tau}$ oscillation with the overall flux normalization fitted as a free parameter. \cite{SKinfo} The up-going $\mu$-like events were manifestly smaller than the down-going ones; this is the obvious evidence for the neutrino oscillations. Besides, looking at $e$-like events, they fit our prediction which also meets our expectations for a slight (almost no) oscillation in the source of atmospheric neutrino oscillations \cite{dect}}
+    \label{result1}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width = 1\textwidth]{../figure/result2.png}
+        \caption{These are the figures about the improvement of zenith angle distribution with the nonzeros $\theta_{13}$. The data are the filled circles with error bars; the best fit is the red dash line; the blue boxes are the mc data without neutrino oscillations. In contrast to these past experiments, the earth matter effect plays an important role in the analysis. \cite{SKexp}}
+        \label{result2}
+    \end{figure}
+
+\begin{multicols}{2}
 
 \begin{thebibliography}{1}
 
 	%Each item starts with a \bibitem{} command and the details thereafter.
 	
-    \bibitem{SKexp} J. Hosaka et al. Physical Review D (2006)
-    \bibitem{AtoNeu} Mclachlan Fukuei Thomas. Study of the Oscillation of Neutrinos and Anti-Neutrinos and of Non-Standard Neutrino Interactions with the Atmospheric Data in Super-Kamiokande, U Tokyo (2015).
-    \bibitem{wiki} Wikipedia Contributors, Neutrino oscillation, Wikipedia (2022).
-    % \bibitem{4} Shot noise, Wikipedia, https://reurl.cc/ZAN4Xg
-    % \bibitem{5} Shot Noise, \emph{sunny lee}, https://reurl.cc/NAb9Vn 
-        
-    %%% The 1,2 etc. are used to cite in text. See the intro for an example
-    %%% When you want to cite in your cite, type in \cite{} wherever you want
+    \bibitem{SKexp} J. Hosaka et al. Physical Review D. Three flavor neutrino oscillation analysis of atmospheric neutrinos in Super-Kamiokande (2006).
+    \bibitem{AtoNeu} Mclachlan Fukuei Thomas. Study of the Oscillation of Neutrinos and Anti-Neutrinos and of Non-Standard Neutrino Interactions with the Atmospheric Data in Super-Kamiokande. The University of Tokyo, Japan. (2015).
+    \bibitem{SKinfo} Y. Fukuda et al. Physical Review Letters Evidence for Oscillation of Atmospheric Neutrinos (1998).
+    \bibitem{dect}Y. Koshio. Universe. Observation of Atmospheric Neutrinos (2020).
+    \bibitem{}Takaaki Kajita. Discovery of Atmospheric Neutrino Oscillations. Institute for Cosmic Ray Research, The University of Tokyo, Japan. (2015)
+    \bibitem{Fermilab} Neutrino Group. SLAC. Neutrino Oscillation \url{https://reurl.cc/ROQYoD} (2018)
+    \bibitem{wiki} Wikipedia Contributors. Wikipedia. Neutrino oscillation (2022).
     
 \end{thebibliography}
 
-    
 \end{multicols}
 
 
